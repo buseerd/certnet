@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  ganache:
+    image: trufflesuite/ganache:latest
+    command: ["--host","0.0.0.0","--chain.chainId","1337","--wallet.totalAccounts","10","--miner.blockTime","1"]
+    ports:
+      - "8545:8545"
+    networks: [certnet]
+
+  hardhat:
+    image: node:20
+    working_dir: /workspace
+    volumes:
+      - ./dapp:/workspace
+    depends_on:
+      - ganache
+    networks: [certnet]
+    command: >
+      bash -lc "npm install --legacy-peer-deps && npx hardhat compile && sleep infinity"
+
+  client:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - ./client:/app
+    depends_on:
+      - ganache
+    networks: [certnet]
+    command: ["bash","-lc","sleep infinity"]
+
+networks:
+  certnet:
+    name: certnet

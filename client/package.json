@@ -1,0 +1,12 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node action.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

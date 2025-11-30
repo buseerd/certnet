@@ -1,0 +1,22 @@
+# Node
+node_modules/
+
+# Hardhat artifacts
+dapp/artifacts/
+dapp/cache/
+
+# Client build caches
+client/.parcel-cache/
+client/dist/
+
+# ENV files (çok önemli)
+*.env
+.env.local
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
