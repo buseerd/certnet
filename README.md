@@ -5,7 +5,7 @@ kurum içi “dijital sertifika”
 oluşturma – doğrulama – iptal akışını gösteren örnek bir sistemdir.
 
 
-## YOUTUBE VİDEO LİNKİ  https://youtu.be/YDmqk_97BQ0  
+
 
 Amaç:  
 - Yerel bir EVM zinciri (Ganache) üzerinde
