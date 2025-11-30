@@ -59,36 +59,3 @@ certnet/
 
 
 
-##Çalıştırma Adımları
-Docker Ganache
-docker ps
-
-
-Hardhat kontratını deploy
-cd dapp
-npx hardhat run scripts/deploy.js --network localhost
-
-
-
-LI ile sertifika ID ve hash üretimi
-cd client
-
-node action.js hash 221229059 "Buse Erdogan" buse-salt-01
-
-
-
-Sertifika oluşturulması
-node action.js issue 0xfcbf013fa9700c08c4025fed5fd413e114c9adbb0e2e713ab75b755394bf1ed1 0x6d8f5c211cf3300a85e0f5f97e69da75aae198b501671cb37c576506fba2600f "Dijital Dönüşüme Giriş Sertifikası" "Bilgisayar Mühendisliği Bölümü" 0
-
-
-verify
-node action.js verify 0xfcbf013fa9700c08c4025fed5fd413e114c9adbb0e2e713ab75b755394bf1ed1 0x6d8f5c211cf3300a85e0f5f97e69da75aae198b501671cb37c576506fba2600f
-
-
-revoke
-node action.js revoke 0xfcbf013fa9700c08c4025fed5fd413e114c9adbb0e2e713ab75b755394bf1ed1
-
-
-tekrarverify 
-node action.js verify 0xfcbf013fa9700c08c4025fed5fd413e114c9adbb0e2e713ab75b755394bf1ed1 0x6d8f5c211cf3300a85e0f5f97e69da75aae198b501671cb37c576506fba2600f
-
